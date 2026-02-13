@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="main-header">
+    
+    <!-- Navigation links -->
+   <nav id="navigation">
+    <ul class="page-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="./pages/about.html" class="nav-link">About</a></li>
+        <li class="services-dropdown">
+            <a href="#" class="service-btn nav-link">Services</a>
+            <ul class="services">
+                <li><a href="./pages/mowing.html" class="nav-link">Mowing</a></li>
+                <li><a href="./pages/fertilizing.html" class="nav-link">Fertilizing</a></li>
+                <li><a href="./pages/spring_cleanup.html" class="nav-link">Spring Clean-up</a></li>
+                <li><a href="./pages/fall_cleanup.html" class="nav-link">Fall Clean-up</a></li>
+            </ul>
+        </li>
+        <!-- Need to make a way for this to connect to something - either a contact page or connected to my IQ form on my main page-->
+        <li><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+   </nav> 
+   
+   <!-- Logo -->
+   <a href="index.html">
+    <div class="logo">
+        <span class="logo-top" data-text="Robinson">Robinson</span>
+        <div class="logo-bottom-row">
+            <!-- Leaf
+                <svg class="leaf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                <path fill="#32a852" d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+            </svg> -->
+            <span class="logo-bottom" data-text="Lawn Care">Lawn Care</span>
+        </div>
+    </div>
+   </a>
+
+   <!-- Right side stuff -->
+   <div class="header-actions"> 
+    <span class="phone-number"><a href="tel:+12087106228">(208) 710-6228</a></span>
+    <!-- Make a button here -->
+    <a href="#" class="estimate-btn">Your Free Estimate</a>
+   </div>
+
+</header>
+
+<!-- Hero Section -->
+ <!-- <section class="hero">
+    <div class="hero-content"> -->
+        <!-- Maybe, Your Lawn. Perfected. I also like Exceptional lawns start here. Or, Step into a better lawn. -->
+        <!-- <h1>A Lawn You're Proud to Come Home To.</h1>
+        <p>Expert mowing, fertilizing, and yard clean-ups in Rexburg and Idaho Falls</p>
+        <div class="hero-btn">
+            <a href="#" class="estimate-btn">Get a Free Estimate</a>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+
+
+css:
+@font-face {
+    font-family: 'paladins-outline';
+    src: url('../assets/fonts/paladins/paladinsout.ttf') format('truetype');  
+}
+@font-face {
+    font-family: 'paladins-solid';
+    src: url('../assets/fonts/paladins/paladins.ttf') format('truetype');
+}
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #2e312f;
+}
+
+/* Nav bar / header */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1000;
+    
+    background-color: #000; 
+    border-radius: 40px;
+    padding: 0 clamp(10px, 2vw, 30px);
+
+    /* clamp(10px, 4vw, 30px;) */
+    
+    width: 92%;
+    max-width: 1500px;
+    box-sizing: border-box;
+}
+#navigation, .header-actions {
+    flex: 1; 
+}
+.header-actions {
+    display: flex;
+    justify-content: end;
+}
+/* Nav links */
+.page-links {
+    display: flex;
+    list-style: none;
+    gap: clamp(10px, 1.5vw, 25px);
+    /* gap: 25px; */
+    padding: 0;
+    margin: 0;
+    /* font-size: 22px; */
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+.nav-link {
+    letter-spacing: 1px;
+    transition: color .3s ease;
+}
+.nav-link:hover, .services_dropdown:hover > .nav_link {
+    color: #32a852;
+}
+.services-dropdown {
+    position: relative;
+    height: 100%;
+}
+.services {
+    position: absolute; 
+    top: 100%;        /* Place it directly below the 'Services' link */
+    left: -10px;
+    list-style: none;
+    padding: 10px 10px;
+    
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+
+
+    /* For animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s, color .3s ease;
+}
+.services li a {
+    color: white;
+    display: block;   
+    white-space: nowrap; 
+    padding: 4px;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.services-dropdown:hover .services {
+    /* display: block;  */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0)
+}
+a {
+    color: white;
+}
+
+/* Logo */
+
+/* .logo {
+    font-family: paladins-outline;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: end; 
+    
+    font-weight: 900;
+}
+
+
+.logo-top {
+    font-size: 54px;
+    color: white;
+}
+.logo-bottom {
+    font-size: 36px;
+    color: #32a852;
+} */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 700;
+    text-decoration: none;
+
+   
+}
+
+.logo-top, .logo-bottom {
+    position: relative; /* vital for layering */
+    display: inline-block;     /* ensures they stack correctly */
+    font-family: 'paladins-outline';
+    z-index: 2;        /* puts the outline on top */
+    line-height: 1;     /* keeps the stacking tight */
+    width: max-content;  
+    height: 100%; 
+    white-space: nowrap;  
+    line-height: 1;
+    
+
+}
+
+.logo-top {
+    /* font-size: 52px; */
+    font-size: clamp(36px, 4vw, 54px);
+    color: white;
+}
+
+.logo-bottom {
+    font-size: clamp(24px, 2.65vw, 36px);
+    color: #32a852;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* .leaf-icon {
+    position: relative;
+    z-index: 20; 
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+    width: 35px;   Increase this number to change the size of the leaf 
+    height: auto;
+} */
+.logo-bottom-row {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+/* Make the leaf "flutter" on hover */
+/* .logo:hover .leaf-icon {
+    transform: rotate(-15deg) scale(1.2);
+} */
+
+/* Layering the outline and the fill */
+.logo-top::before, .logo-bottom::before {
+    content: attr(data-text); /* Grabs the text from HTML */
+    position: absolute;
+    left: -.8px;
+    top: .2px;
+    font-family: 'paladins-solid'; 
+    color: black;
+    z-index: -1;       
+    width: 100%;  
+    height: 100%;  
+    line-height: 1;
+    transform: scale(.995)
+}
+
+/* Logo Glow - commented out but can maybe use later */
+.logo:hover {
+    transform: scale(1.02);
+}
+.logo:hover .logo-top {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+.logo:hover .logo-bottom {
+    text-shadow: 0 0 10px rgba(50, 168, 82, 0.4);
+}
+
+
+
+/* Scroll Effect */
+/* Base header transition for smoothness */
+/* .main-header {
+    transition: background-color 0.4s ease, padding 0.4s ease;
+} */
+
+/* This class is added by JavaScript when you scroll down */
+/* .main-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+    padding: 10px 5%; 
+    
+    Probably should be deleted
+} */
+
+
+/* Nav bar right side actions */
+.phone-number {
+    font-size: clamp(16px, 1.5vw, 20px);
+    /* font-size: 22px; */
+    align-content: center;
+    padding-left: clamp(10px, 1.5vw, 30px);
+    padding-right: clamp(10px, 1.5vw, 30px);
+    /* padding-right: 30px; */
+    /* text-align: center; */
+}
+.phone-number a {
+     transition: color .3s ease;
+}
+.phone-number a:hover {
+    color: #32a852;
+}
+
+
+
+/* Hero */
+
+.hero {
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../assets/images/Screenshot\ 2026-02-03\ at\ 9.01.47\ PM.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.estimate-btn {
+    display: inline-block;
+    background-color: #32a852;
+    color: white;
+    padding: 10px clamp(8px, 1.4vw, 16px);
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    will-change: transform;
+    transition: transform .3s ease;
+    font-size: clamp(12px, 1.2vw, 16px);
+   
+}
+.estimate-btn:hover {
+  /* color: #32a852;
+  background-color: #ddd;
+  border: 1.5px solid #32a852; */
+  transform: scale(1.04)
+  
+}
+
+

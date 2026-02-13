@@ -1,0 +1,1455 @@
+@font-face {
+    font-family: 'paladins-outline';
+    src: url('../assets/fonts/paladins/paladinsout.ttf') format('truetype');  
+}
+@font-face {
+    font-family: 'paladins-solid';
+    src: url('../assets/fonts/paladins/paladins.ttf') format('truetype');
+}
+/* 1. Define the animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Apply it to the body or main container */
+body {
+    animation: fadeIn 0.8s ease-out;
+}
+
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all .3s ease-in-out;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #2e312f;
+}
+p {
+    font-size: 20px;
+}
+h2 {
+    letter-spacing: 2px;
+}
+textarea {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+/* Nav bar / header */
+
+/*  */
+
+.menu-toggle, .phone-icon {
+    display: none; /* Hide mobile elements on desktop */
+}
+
+/*  */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1000;
+    
+    background-color: #000; 
+    border-radius: 40px;
+    padding: 15px clamp(10px, 2vw, 30px);
+
+    /* clamp(10px, 4vw, 30px;) */
+    
+    width: 92%;
+    max-width: 1500px;
+    box-sizing: border-box;
+}
+#navigation, .top-actions {
+    flex: 1; 
+}
+.top-actions {
+    display: flex;
+    justify-content: end;
+}
+/* Nav links */
+.page-links {
+    display: flex;
+    list-style: none;
+    gap: 0 clamp(10px, 1.5vw, 25px);
+    padding: 0;
+    margin: 0;
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+.nav-link {
+    letter-spacing: 1px;
+    transition: color .3s ease;
+    white-space: nowrap;
+}
+.nav-link:hover, .services_dropdown:hover > .nav_link {
+    color: #32a852;
+}
+.services-dropdown {
+    position: relative;
+    height: 100%;
+}
+.services {
+    position: absolute; 
+    top: 100%;        /* Place it directly below the 'Services' link */
+    left: -10px;
+    list-style: none;
+    padding: 10px 10px;
+    
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+
+
+    /* For animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s, color .3s ease;
+}
+.services li a {
+    color: white;
+    display: block;   
+    white-space: nowrap; 
+    padding: 4px;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.services-dropdown:hover .services {
+    /* display: block;  */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0)
+}
+a {
+    color: white;
+}
+
+/* --- Desktop Settings --- */
+.mobile-estimate-li {
+    display: none; /* Hide the menu link on desktop */
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo-top, .logo-bottom {
+    position: relative; /* vital for layering */
+    display: inline-block;     /* ensures they stack correctly */
+    font-family: 'paladins-outline';
+    z-index: 2;        /* puts the outline on top */
+    line-height: 1;     /* keeps the stacking tight */
+    width: max-content;  
+    /* height: 100%;  */
+    white-space: nowrap;  
+    line-height: 1;
+    transition: all .3s ease;
+
+}
+
+.logo-top {
+    /* font-size: 52px; */
+    font-size: clamp(36px, 4vw, 54px);
+    color: white;
+}
+
+.logo-bottom {
+    font-size: clamp(24px, 2.65vw, 36px);
+    color: #32a852;
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+}
+.logo-bottom-row {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+
+/* Layering the outline and the fill */
+.logo-top::before, .logo-bottom::before {
+    content: attr(data-text); /* Grabs the text from HTML */
+    position: absolute;
+    left: -.8px;
+    top: .2px;
+    font-family: 'paladins-solid'; 
+    color: black;
+    z-index: -1;       
+    width: 100%;  
+    height: 100%;  
+    line-height: 1;
+    transform: scale(.995)
+}
+
+/* Logo Glow */
+/* .logo:hover {
+    transform: scale(1.01);
+} */
+.logo:hover .logo-top {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+.logo:hover .logo-bottom {
+    text-shadow: 0 0 10px rgba(50, 168, 82, 0.4);
+}
+
+
+
+/* Nav bar right side actions */
+.phone-link {
+    font-size: clamp(16px, 1.5vw, 20px);
+    align-content: center;
+    padding-left: clamp(10px, 1.5vw, 30px);
+    padding-right: clamp(10px, 1.5vw, 30px);
+}
+.phone-link a {
+     transition: color .3s ease;
+}
+.phone-link:hover {
+    color: #32a852;
+}
+#navigation, .top-actions {
+    flex: 1;
+    flex-basis: 0; /* Forces both sides to start with equal width */
+}
+
+.estimate-btn {
+    display: inline-block;
+    background-color: #32a852;
+    color: white;
+    padding: 10px clamp(8px, 1.4vw, 16px);
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: normal;
+    will-change: transform;
+    transition: all .3s ease-in-out; 
+    font-size: clamp(12px, 1.3vw, 18px);
+   
+}
+.estimate-btn:hover {
+  color: #32a852;
+  background-color: #000;
+  border: 1.5px solid #32a852;
+  /* transform: scale(1.04) */
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero */
+
+.hero-cards-header {
+    padding-top: 170px; 
+    padding-bottom: 40px;
+    min-height: 90vh;
+    display: flex;
+   justify-content: center;
+}
+
+.hero-card-container {
+    display: grid;
+    max-width: 1500px;
+    width: 90%;
+    margin: 0 auto;
+    gap: 40px; /* Controls the gap in between the cards.*/
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+/* General Card Styling */
+.hero-card {
+    flex: 1;
+    background: #1a1a1a;
+    border-radius: 30px; /* Matching the rounded vibe */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+   
+}
+.info-card {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.info-card .hero-card-title {
+    font-family: paladins-outline;
+    font-weight: 700;
+    font-size: clamp(32px, 3vw, 48px);
+    line-height: 1.1;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: white;
+    letter-spacing: 1px;
+
+}
+.paladins-green {
+    color: #32a852;
+}
+.info-card h1 {
+    font-size: 18px;
+    color: #e9e9e9;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+
+
+/* Estimate Form */
+
+.form-title {
+    font-size: clamp(16px, 1.35vw, 22px);
+    color: #e9e9e9;
+    margin-bottom: 5px;
+    font-weight: normal;
+    text-align: center;
+    /* border: 2px solid #32a852;
+    border-radius: 15px;
+    background-color: black;
+    padding: 10px 0;
+     color: #32a852; */
+
+}
+#form-line {
+    margin: 0;
+    width: 90%;
+}
+.estimate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.estimate-form input, .estimate-form select, .estimate-form textarea {
+    padding: 15px 20px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #e9e9e9;
+    font-size: 16px;
+    outline-color: #32a852;
+}
+.submit-btn {
+    background-color: #32a852;
+    color: white;
+    padding: 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.submit-btn:hover {
+    background-color: #000; /* Matches Nav */
+    transform: translateY(-3px);
+    color: #32a852;
+    border: 1.5px solid #32a852;
+}
+.estimate-label {
+    color: #e9e9e9;
+}
+
+
+
+
+
+/* Image Card - Hero */
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Important: prevents image stretching */
+    
+}
+
+/* Why Choose Us section */
+
+.choose-us {
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px; /* matches hero container */
+    width: 90%;
+    margin: 80px auto 50px auto;
+    align-items: flex-start;
+    color: #e9e9e9;
+}
+
+.choose-us-intro {
+ align-self: center;
+ margin-bottom: 10px;
+ font-size: clamp(26px, 2.5vw, 42px);
+ letter-spacing: 2px;
+ color: #e9e9e9;
+ /* font-family: 'open sans' */
+ 
+ /* layering */
+    /* position: relative;
+    display: inline-block;     
+    font-family: 'paladins-outline';
+    z-index: 2;      
+    line-height: 1;     
+    width: max-content;  
+    white-space: nowrap;  
+    line-height: 1;
+    transition: all .3s ease; */
+    
+}
+/* .choose-us-intro::before {
+     content: attr(data-text); 
+    left: -.8px;
+    top: .2px;
+    font-family: 'paladins-solid'; 
+    color: black;
+    z-index: -1;       
+    width: 100%;  
+    transform: scale(.995)
+} */
+
+
+.why-choose-us {
+    /* font-family: 'paladins-solid'; */
+    font-weight: 700;
+    font-size: clamp(32px, 3vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    /* color: white; */
+    color: #32a852;
+    /* color: black; */
+    letter-spacing: 3px;
+
+    text-align: center;
+    align-self: center;
+
+    /* layering */
+    position: relative; /* vital for layering */
+    display: inline-block;     /* ensures they stack correctly */
+    font-family: 'paladins-outline';
+    z-index: 2;        /* puts the outline on top */
+    line-height: 1;     /* keeps the stacking tight */
+    width: max-content;  
+    white-space: nowrap;  
+    line-height: 1;
+    transition: all .3s ease;
+    
+}
+.why-choose-us::before {
+     content: attr(data-text); /* Grabs the text from HTML */
+    position: absolute;
+    left: -.8px;
+    top: .2px;
+    font-family: 'paladins-solid'; 
+    color: black;
+    /* color: #32a852; */
+    z-index: -1;       
+    width: 100%;  
+    transform: scale(.995)
+}
+.mission-statement {
+    align-self: center;     
+    text-align: center;     
+    font-style: italic;
+    font-size: clamp(18px, 1.5vw, 22px);
+    color: white;
+    /* color: #32a852;  */
+    margin: 40px 0;          
+    max-width: 800px;
+    width: 70%;       
+    line-height: 1.4;
+}
+.mission-statement:hover {
+    color: #32a852;
+}
+/* For the mowing page */
+.mowing-highlight {
+    align-self: center;     
+    text-align: center;     
+    font-style: italic;
+    font-size: clamp(18px, 1.5vw, 22px);
+    color: white;
+    /* color: #32a852;  */
+    margin: 40px 0;          
+    max-width: 800px;
+    width: 70%;       
+    line-height: 1.4;
+}
+.green-text {
+    color: #32a852;
+}
+#fertilizingh2, #fallh2 {
+    font-size: clamp(34px, 5vw, 44px);
+}
+.choose-us p {
+    width: 80%;
+    max-width: 1000px; 
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin: auto;
+    font-size: clamp(18px, 1.5vw, 20px);
+    letter-spacing: 1.5px;
+}
+.choose-us p a, .choose-us div a, .faq-answer p a {
+    text-decoration: underline;
+    /* text-decoration-color: #32a852; */
+}
+.choose-us p a:hover, .choose-us div a:hover, .faq-answer p a:hover {
+    color: #32a852;
+}
+/* Option for divider that doesn't fade at the ends */
+/* .divider {
+    height: 3px;            
+    background-color: #32a852;
+    border-radius: 5px;      
+    margin: 30px 0;          
+    width: 80%;
+    align-self: center;
+} */
+.divider {
+    height: 2.5px;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        #32a852 20%, 
+        #32a852 80%, 
+        transparent
+    );
+    width: 80%;
+    margin: 40px 0;
+    border: none;
+    align-self: center;
+}
+
+
+
+/* Services Cards */
+
+.services-section {
+    max-width: 1500px;
+    width: 90%;
+    margin: 80px auto;
+
+}
+.services-section .divider {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.services-title {
+    font-family: 'paladins-outline';
+    font-size: clamp(32px, 3vw, 48px);
+    color: #32a852;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2.5px;
+}
+
+.services-title::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -.8px;
+    top: .2px;
+    font-family: 'paladins-solid'; 
+    color: black;
+    z-index: -1;       
+    width: 100%;  
+    transform: scale(.995);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 Grid */
+    gap: 30px;
+    margin-top: 40px;
+}
+.service-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden; /* Vital for the zoom effect */
+    aspect-ratio: 16 / 9; /* Keeps cards uniform in size */
+    display: block;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.service-image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+.service-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth zoom */
+}
+.service-card:hover .service-image-wrapper img {
+    transform: scale(1.1);
+}
+/* Definitely work through this one */
+.service-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Keeps text at the bottom */
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+.service-text {
+    width: 100%;
+}
+
+/* work through */
+.service-text h3 {
+    color: white;
+    /* font-family: 'paladins-solid'; */
+    font-size: 26px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+/* .center-h3 {
+    text-align: center;
+} */
+.service-text p {
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+.service-list {
+    list-style-type: square; /* Removes default bullets */
+    padding: 0;
+    margin: 0;
+}
+.service-list li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+/*  */
+/*  */
+/* FAQ */
+.faq-section {
+    max-width: 1500px;
+    width: 90%;
+    margin: 80px auto;
+}
+.faq-title {
+    font-family: 'paladins-outline';
+    font-size: clamp(32px, 3vw, 48px);
+    color: #32a852;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 3px;
+}
+.faq-title::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -.8px;
+    top: .2px;
+    font-family: 'paladins-solid'; 
+    color: black;
+    z-index: -1;       
+    width: 100%;  
+    transform: scale(.995);
+}
+.faq-section .divider {
+    margin-left: auto;
+    margin-right: auto;
+}
+.faq-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.faq-item {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+.faq-question {
+    width: 100%;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.faq-question:hover {
+    background-color: #252525;
+}
+.faq-icon {
+    font-size: 24px;
+    color: #32a852;
+    transition: transform 0.3s ease;
+}
+/* The Answer - Hidden by default */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #111;
+}
+.faq-answer p, .faq-answer ul li {
+    padding: 5px 25px 7px 25px;
+    color: #eee;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+/* Active State */
+.faq-item.active .faq-answer {
+    max-height: 750px; /* Adjust if answers are very long */
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: white;
+}
+
+/*  */
+/*  */
+/*  */
+.page-end-btn {
+    display: flex;
+    justify-content: center;
+}
+#page-end-btn {
+    
+    max-width: 400px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px; 
+}
+
+/* Footer */
+.main-footer {
+    background-color: #000;
+    color: #e9e9e9;
+    padding: 60px 0 20px 0;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1500px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Gives the logo column more room */
+    gap: 50px;
+}
+
+/* Footer Column Styling */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-about {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #aaa;
+}
+/* Layered Headings for Footer */
+.footer-heading {
+    font-family: 'paladins-outline';
+    font-size: 22px;
+    color: #32a852;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.footer-heading::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -0.8px;
+    top: 0.2px;
+    font-family: 'paladins-solid'; 
+    color: #000; /* Dark fill for footer headings */
+    z-index: -1;       
+    width: 100%;  
+    transform: scale(0.99);
+}
+
+.footer-logo {
+    align-items: flex-start;
+}
+.footer-logo .logo-top {
+    font-size: clamp(30px, 3.7vw, 44px);
+}
+.footer-logo .logo-bottom {
+    font-size: clamp(22px, 2.5vw, 32px);
+}
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keeps logo, p, and social icons left-aligned */
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;    /* Internally right-aligns "Lawn Care" under "Robinson" */
+    width: fit-content;       /* Shrinks the box so it doesn't span the whole column */
+    margin-bottom: 10px;      /* Space between logo and the paragraph below */
+}
+
+/* 3. Ensure the text rows don't stretch */
+.logo-top, .logo-bottom {
+    display: block;
+    width: max-content;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #e9e9e9;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    color: #32a852; 
+    transform: translateY(-3px);
+}
+/* Link Lists */
+.footer-links, .footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li, .footer-contact li {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.footer-links a, .footer-contact a {
+    color: #e9e9e9;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+    color: #32a852;
+}
+
+/* Bottom Bar and Divider */
+.footer-bottom {
+    max-width: 1500px;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+.footer-bottom .divider {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%
+}
+/* Media Query I'm not sure about yet - Probably replace later */
+
+@media (max-width: 900px) {
+    .hero-card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cards-header {
+        padding-top: 110px; /* Reduced from 170px */
+    }
+    
+    .image-card {
+        height: 350px;
+        order: -1; 
+    }
+
+    .info-card {
+        padding: 40px 30px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-col {
+        align-items: center;
+    }
+    .top-bar {
+        padding: 10px 20px;
+        top: 10px;
+        
+    }
+    /* .logo {
+        align-items: center;
+        text-align: center;
+        flex: 1;
+    } */
+    /* .menu-toggle, .top-actions {
+        flex: 1; 
+        display: flex;
+    } */
+    /* .top-actions {
+        justify-content: flex-end; 
+    } */
+
+    .top-bar > a {
+    display: flex;
+    justify-content: center;
+    flex: 2; /* Gives the logo more priority in the center */
+}
+
+    .phone-text {
+        display: none; 
+    }
+    .phone-icon {
+        display: block; 
+        color: #32a852;
+        width: 34px;
+        height: 34px;
+    }
+    .top-actions {
+        gap: 15px;
+        flex: 0; 
+    }
+
+    
+
+    /* Hamburger Button Styling */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        position: relative;
+    }
+     
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+        transform-origin: center;
+    }
+    /* Animations for the "X" state */
+    .bar.rotate-down {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #32a852; /* Changes to Green */
+    }
+
+    .bar.fade-out {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    .bar.rotate-up {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #32a852; /* Changes to Green */
+    }
+
+
+    /* Navigation Menu Transformation */
+    /* .page-links {
+        display: none; 
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        padding: 40px 0;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    } */
+
+    .page-links {
+        display: flex;             /* Keep it flex but hide it off-screen */
+        position: fixed;           /* Stays in place even if you scroll */
+        top: 0;
+        right: 0;                  /* Aligns to the right edge */
+        width: 100%;                /* Takes up most of the screen width */
+        max-width: 300px;
+        height: 100vh;             /* Full height of the screen */
+        background-color: #111;    /* Slightly lighter than pure black for depth */
+        flex-direction: column;
+        padding: 100px 20px;       /* Extra top padding so links start below the header */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        
+        /* THE SLIDE LOGIC */
+        transform: translateX(100%); /* Starts completely off-screen to the right */
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0), visibility .4s;
+        z-index: 999;              /* Sits behind the hamburger but above the content */
+        overflow-y: auto
+    }
+
+    /* .page-links.active {
+        display: flex;
+    } */
+     /* 2. Slide it in when active */
+    .page-links.active {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+
+    /* .page-links li {
+        margin: 15px 0;
+    } */
+    .page-links li {
+        margin: 20px 0;
+        text-align: left;
+        border-bottom: 1px solid #222; /* Adds a subtle separator for mobile */
+        padding-bottom: 10px;
+    }
+    .services li {
+        margin: 0 !important;
+        padding: 5px 0; /* Tight spacing for the sub-menu */
+        border-bottom: none !important;
+    }
+    
+
+    /* .services {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        display: none; 
+    } */
+    /* .services {
+        display: block;
+        position: static;
+        padding-left: 20px;
+        margin-top: 10px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    } */
+    .services-dropdown:hover .services {
+        display: block;
+    }
+
+    .services {
+        display: block;           
+        position: static;
+        background: transparent;
+        padding-left: 20px;
+        opacity: 1;
+        visibility: visible;
+        visibility: hidden;
+        transform: none;
+       
+        
+        max-height: 0;            
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        overflow: hidden;         
+        transition: all .4s ease-in-out;
+    }
+
+    /* When the JS toggles this class */
+    .services.show {
+        max-height: 300px;        
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        visibility: visible;
+    }
+
+
+    /* 1. The Closed State */
+    /* .services {
+        display: block;           
+        position: static;
+        background: transparent;
+        transform: none;
+        
+        /
+        max-height: 0;            
+        opacity: 0;               
+        overflow: hidden;   */
+
+        /* Spacing - MUST be 0 when closed to remove the gap */
+        /* margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        
+        /
+        visibility: visible;      
+        transition: all 0.4s ease-in-out;
+    } */
+
+    /* 2. The Open State (Triggered by JS) */
+    /* .services.show {
+        max-height: 500px;        
+        opacity: 1;               
+        
+        
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+    } */
+
+    .services-dropdown {
+    margin-bottom: 0 ;
+    padding-bottom: 0 ;
+    height: auto;   /* This is very important: Remove this property to get the spacing to work automatically */
+}
+
+
+    /* Estimate Button */
+
+    .top-actions .estimate-btn {
+        display: none;
+    }
+
+    .mobile-estimate-li {
+        display: block;
+        margin-top: 30px; /* Space it out from the other links */
+    }
+    /* .estimate-link-mobile {
+        background-color: #32a852;
+        color: white !important; 
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+        font-weight: bold;
+        border: 1px solid transparent;
+    } */
+    /* Second option for the button styling */
+        .estimate-link-mobile {
+        background-color: #000;
+        color: #32a852 !important; 
+        padding: 15px;
+        border-radius: 10px;
+        
+        text-align: center;
+        display: block;
+        font-weight: bold;
+        border: 1.5px solid #32a852;
+        transition: all .4s ease-in-out;
+    }
+    .estimate-link-mobile:hover {
+        transform: scale(1.02)
+    }
+
+    /* The menu backdrop blur */
+
+    .menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Behind menu (1001), above content */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px); /* Optional: blurs the background content slightly */
+}
+
+
+
+/* Activate the backdrop when the menu is open */
+.menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+#navigation {
+        flex: 0; /* Prevents the nav container from taking up space in the bar */
+    }
+
+}
+
+
+
+
+/* MOWING SECTION */
+/* --- Container --- */
+.mow-section {
+    max-width: 1400px;
+    width: 90%;
+    margin: 60px auto;
+}
+.mow-section h2 {
+    margin-bottom: 30px;
+}
+
+/* --- The Grid --- */
+.mow-grid {
+    display: grid;
+    /* This creates a responsive grid: 2 columns on desktop, 1 on mobile */
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
+    gap: 40px;
+    align-items: stretch; /* Forces cards to be equal height */
+}
+
+/* --- The Card --- */
+.mow-card {
+    background: #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft shadow */
+    display: flex;
+    flex-direction: column; /* Stack image on top of text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mow-card:hover {
+    transform: translateY(-5px); 
+    /* box-shadow: 0 15px 35px rgba(50, 168, 82, 0.15); Green glow on hover  */
+}
+
+/* --- Image Area --- */
+.mow-image-box {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    overflow: hidden;
+    position: relative;
+}
+
+.mow-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.mow-card:hover .mow-image-box img {
+    transform: scale(1.05); /* Gentle zoom */
+}
+
+/* --- Text Content Area --- */
+.mow-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures content fills the card height */
+}
+
+.mow-content h3 {
+    font-family: 'paladins-solid', sans-serif;
+    font-size: 25px;
+    color: #aaa;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #32a852; /* Green accent underline */
+    padding-bottom: 10px;
+    align-self: flex-start; /* Aligns underline to text width */
+}
+
+.mow-content p, .mow-content ul {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- List Styling --- */
+.mow-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mow-content li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Custom green bullet points */
+.mow-content li::before {
+    content: "■";
+    color: #32a852;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 900px) {
+    .mow-grid {
+        grid-template-columns: 1fr;
+    }
+    .mow-image-box {
+        height: 220px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The Contact Page */
+/* Container for the text and photo */
+.contact-text-area {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-sidebar-title {
+    font-family: 'paladins-outline';
+    font-size: clamp(24px, 2.5vw, 36px);
+    margin-bottom: 25px; /* Space above the photo */
+    color: white;
+}
+
+/* New Inline Photo Styling */
+.contact-photo-inline {
+    width: 100%;
+    height: 300px; /* Adjust this height as needed */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px; /* Space below the photo */
+    border: 1px solid rgba(50, 168, 82, 0.3); /* Optional subtle green border */
+}
+
+.contact-photo-inline img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-text-area p {
+    color: #e9e9e9;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* Contact Methods */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.method-icon {
+    font-size: 20px;
+    background: rgba(50, 168, 82, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #32a852;
+}
+
+.method-data strong {
+    color: #32a852;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.method-data a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.method-data a:hover {
+    color: #32a852;
+}

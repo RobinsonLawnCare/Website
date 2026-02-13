@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">        
+</head>
+<style>
+
+</style>
+<body>
+
+<!-- The new nav bar -->
+
+<section class="top-bar">
+    <button class="menu-toggle" aria-label="Open Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    
+    <nav id="navigation">
+    <ul class="page-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="./about.html" class="nav-link">About</a></li>
+        <li class="services-dropdown">
+            <a href="#" class="service-btn nav-link">Services &#9662;</a>
+            <ul class="services">
+                <li><a href="./mowing.html" class="nav-link">Mowing</a></li>
+                <li><a href="./fertilizing_weed_control.html" class="nav-link">Fertilizing & Weed Control</a></li>
+                <li><a href="./spring_jumpstart.html" class="nav-link">Spring Jump Start</a></li>
+                <li><a href="./fall_cleanup.html" class="nav-link">Fall Clean-up</a></li>
+            </ul>
+        </li>
+        <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+        <li class="mobile-estimate-li">
+            <a href="#estimate-request-form-buffer" class="nav-link estimate-link-mobile">Get a Free Estimate</a>
+        </li>
+    </ul>
+   </nav> 
+   
+   <a href="../index.html">
+    <div class="logo">
+        <span class="logo-top" data-text="Robinson">Robinson</span>
+        <div class="logo-bottom-row">
+            <span class="logo-bottom" data-text="Lawn Care">Lawn Care</span>
+        </div>
+    </div>
+   </a>
+
+   <div class="top-actions"> 
+    <a href="tel:+12087106228" class="phone-link">
+        <span class="phone-text">(208) 710-6228</span>
+        <svg class="phone-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+    </a>
+    <a href="#estimate-request-form-buffer" class="estimate-btn">Your Free Estimate</a>
+   </div>
+</section>
+<div class="menu-backdrop"></div>
+
+
+<header class="hero-cards-header">
+    <div class="hero-card-container">
+
+        <div class="hero-card image-card">
+            <img src="../assets/images/crew/7M5A7204.JPG" alt="Robinson Lawn Care tech mowing an emerald green lawn with the sunset in the background">
+        </div>
+
+
+
+        <div class="hero-card info-card">
+            <div class="hero-card-title">
+                <div class="paladins-white">Your Lawn.</div>
+                <div class="paladins-green">Perfected.</div>
+                <div id="estimate-request-form-buffer"></div>
+            </div>
+            
+            <h1>Expert mowing, trimming, edging, and blowing service in Rexburg, Rigby, and Idaho Falls ID. Professional and hassle-free.</h1>
+                <!-- <div class="divider" id="form-line"></div> -->
+            <form class="estimate-form" id="estimate-request-form">
+               <h2 class="form-title">Complete This Form For a Personalized Estimate</h2>
+                 <div class="divider" id="form-line"></div>
+                
+                    <label for="name" class="estimate-label">Name</label>
+                    <input type="text" name="name" placeholder="John Johnson" required id="name">
+                    <label for="address" class="estimate-label">Address</label>
+                    <input type="text" name="address" placeholder="E 1st Main St." id="address" required>
+                    <label for="phone-number" class="estimate-label">Phone Number</label>
+                    <input type="tel" placeholder="(208) 710-6228" id="phone-number" maxlength="14" required>
+                    <label for="email" class="estimate-label">Email</label>
+                    <input type="email" placeholder="email@robinsonlawncare.com" id="email" required>
+                    <label for="service-details" class="estimate-label">Please tell us how we can help!</label>
+                    <textarea name="details" id="service-details"></textarea>
+                
+                    <button type="submit" class="submit-btn">Get a Free Estimate</button>
+            </form>
+        </div>
+        
+
+    </div>
+</header>
+
+
+<main>
+    <!-- Why Choose Us section -->
+
+    <div class="choose-us">
+        <h2 class="choose-us-intro" data-text="Serious About Your Lawn ?">Serious About Your Lawn?</h2>
+        <h2 class="why-choose-us" data-text="So are we.">So are we.</h2>
+        <div class="divider"></div>
+        <p>
+            Your lawn is more than just a patch of grass—it’s the first impression your home makes 
+            and the backdrop for your weekends. We know that "good enough" usually isn't, which is 
+            why we approach every yard with the precision it deserves. 
+        </p>   
+            <div class="mowing-highlight">
+            
+                Whether it’s achieving the perfect height and straightest lines with our <a href="#mowing-card">mowing</a>, defining sharp, trim borders 
+                through <a href="#edging-card">edging</a> and <a href="#trimming-card">trimming</a>, or ensuring a spotless finish with a thorough 
+                <a href="#blowing-card">blowing off</a> of all walkways, we don't cut corners.    
+            </div>
+        <p>
+            If you’re looking for a crew that values a crisp, professional look as much as you do - <span class="green-text">you’ve found it.</span>
+            Plus, to get that emerald green, weed free lawn you've always dreamed of, sign up for a 
+            Robinson Lawn Care licensed applicator to <a href="./fertilizing_weed_control.html">fertilize</a> your yard as well!
+            
+        </p>
+        <div class="divider"></div>
+    </div>       
+ 
+
+    <!-- Our Services section -->
+    <!-- <section class="services-section">
+        <h2 class="services-title" data-text="Our Mowing Services">Our Mowing Services</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="../assets/images/Mowing/Screenshot 2026-02-03 at 9.01.47 PM.png" alt="Professional mowing service">
+                </div>
+                <div class="service-overlay">
+                    <div class="service-text">
+                        <h3 class="center-h3">Precision Mowing</h3>
+        
+                        <ul class="service-list">
+                            <li>Weekly mowing - reliable and hassle-free</li>
+                            <li>We bag and haul away the grass for a pristine cut </li>
+                            <li>Perfectly straight lines - The secret to curb appeal isn't just the height of the grass. It’s the sharpness of the lines.</li>
+                        </ul>
+                        <p>
+                            Our weekly service takes the hassle out of a high-end lawn. We deliver perfectly straight lines for maximum curb appeal, bagging and hauling away all clippings to ensure a pristine, debris-free finish every single time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="./assets/images/Screenshot 2026-02-08 at 2.49.13 PM.png" alt="An emerald green lawn with perfectly straight lines">
+                </div>
+                <div class="service-overlay">
+                    <div class="service-text">
+                        <h3>Detailed Trimming</h3>
+                        <ul class="service-list">
+                            <li>Trimming around edges, trees, and hard to reach areas</li>
+                            <li>We trim <i>with</i> the lawn, so all the clippings will be pushed - not into your flower beds - but onto your yard, where they can be scooped up by the mower</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="./assets/images/Screenshot 2026-02-08 at 2.24.37 PM.png" alt="Weed control service">
+                </div>
+                <div class="service-overlay">
+                    <div class="service-text">
+                        <h3>Crisp Edging</h3>
+                        <ul class="service-list">
+                            <li>Biweekly edging service</li>
+                            <li>We don’t just mow; we frame. Our vertical edging creates a distinct, architectural boundary between your lawn and your walkways.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="./assets/images/Screenshot 2026-02-08 at 11.24.32 PM.png" alt="Property clean-up and leaf removal">
+                </div>
+                <div class="service-overlay">
+                    <div class="service-text">
+                        <h3>Final Blow-off</h3>
+                        <ul class="service-list">
+                            <li>A great mow shouldn't mean a messy driveway. We ensure every sidewalk, patio, and porch is blown clear of debris before we pack up.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    
+<section class="mow-section">
+    <h2 class="services-title" data-text="Our Mowing Services">Our Mowing Services</h2>
+
+    <div class="mow-grid">
+        <div class="mow-card">
+            <div class="mow-image-box">
+                <img src="../assets/images/Mowing/Screenshot 2026-02-03 at 9.01.47 PM.png" alt="Precision Mowing">
+            </div>
+            <div class="mow-content">
+                <h3>Precision Mowing</h3>
+                <p>
+                    Our weekly service takes the hassle out of a high-end lawn. We deliver perfectly straight lines for maximum curb appeal, bagging and hauling away all clippings to ensure a pristine, debris-free finish.
+                </p>
+            </div>
+        </div>
+
+        <div class="mow-card">
+            <div class="mow-image-box">
+                <img src="../assets/Screenshot 2026-02-11 at 1.46.31 PM.png" alt="Detailed Trimming">
+            </div>
+            <div class="mow-content">
+                <h3>Detailed Trimming</h3>
+                <ul>
+                    <li>Trimming around edges, trees, and hard-to-reach areas.</li>
+                    <li>We trim <i>with</i> the lawn, pushing clippings into the yard to be scooped up, rather than into your flower beds.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mow-card">
+            <div class="mow-image-box">
+                <img src="../assets/Screenshot 2026-02-11 at 1.47.15 PM.png" alt="Crisp Edging">
+            </div>
+            <div class="mow-content">
+                <h3>Crisp Edging</h3>
+                <ul>
+                    <li>Biweekly edging service.</li>
+                    <li>We don’t just mow; we frame. Our vertical edging creates a distinct boundary between your lawn and your walkways.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mow-card">
+            <div class="mow-image-box">
+                <img src="../assets/Screenshot 2026-02-11 at 1.50.38 PM.png" alt="Final Blow-off">
+            </div>
+            <div class="mow-content">
+                <h3>Final Blow-off</h3>
+                <ul>
+                    <li>A great mow shouldn't mean a messy driveway.</li>
+                    <li>We ensure every sidewalk, patio, and porch is blown clear of debris before we pack up.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <h2 class="faq-title" data-text="Common Questions">Common Questions</h2>
+    <div class="divider"></div>
+    
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question">
+                What does a typical service look like?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    We aim to make our service as seamless and "set-and-forget" as possible. Same day, same time. Every week. While each yard has its own personality, a standard maintenance visit generally follows this four-step process:
+                </p>
+                <ul>
+                    <li>Precision Mowing - We cut your grass to the ideal height for the current season, ensuring a healthy, lush look.</li>
+                    <li>String Trimming - We tackle the "hard to reach" spots around fences, trees, and posts that the mower can’t quite get to, as well as curbing the lawn down toward hard edges.</li>
+                    <li>Professional Edging - We edge along your driveway and sidewalks, to create that nice gap that makes a lawn pop.</li>
+                    <li>Complete Cleanup - We never leave a mess behind. We blow all grass clippings off your hardscapes and back onto the lawn (or haul them away) so your property looks spotless.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Why don't you do biweekly mows?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>For most lawns in Idaho, a weekly schedule is best to maintain the "one-third rule"—never cutting more than 1/3 of the grass blade at once. This keeps the grass healthy and prevents weeds from taking hold.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                What do I need to do before / after a service?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>As long as we have access to the yard, not much! Make sure your pets are safely indoors, and any efforts you can make to make sure the lawn is tidy are greatly appreciated.</p>
+                <p>That said, if there are a few toys on the yard here and there, no worries. Our techs are happy to take care of it.</p>
+                <p>After a mowing service, simply sit back, relax, and enjoy your yard!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Do I need to be home for the service?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Not at all! As long as we have access to your yard and pets are secured inside, we can complete the work and send you a notification once the job is complete.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="page-end-btn">
+        <a href="#estimate-request-form-buffer" class="estimate-btn" id="page-end-btn">Ready to transform your lawn?</a>
+    </div>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <div class="logo footer-logo">
+                <span class="logo-top" data-text="Robinson">Robinson</span>
+                <span class="logo-bottom" data-text="Lawn Care">Lawn Care</span>
+            </div>
+            <p class="footer-about">
+                Dedicated to perfecting lawns in Rexburg, Rigby, and Idaho Falls since day one. Quality service you can lean on.
+            </p>
+            <!-- Social Media Links for when you get those accounts -->
+            <!-- <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7h-2.54v-2.9h2.54v-2.21c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.62c-.78.3-1.44.71-2.1 1.37-.66.66-1.07 1.32-1.37 2.1-.29.76-.49 1.63-.55 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.55 2.91.3.78.71 1.44 1.37 2.1.66.66 1.32 1.07 2.1 1.37.76.29 1.63.49 2.91.55 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.55.78-.3 1.44-.71 2.1-1.37.66-.66 1.07-1.32 1.37-2.1.29-.76.49-1.63.55-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.55-2.91-.3-.78-.71-1.44-1.37-2.1-.66-.66-1.32-1.07-2.1-1.37-.76-.29-1.63-.49-2.91-.55C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 0 0 5.84 12 6.16 6.16 0 0 0 12 18.16 6.16 6.16 0 0 0 18.16 12 6.16 6.16 0 0 0 12 5.84M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8m6.41-11.71a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+                </a>
+            </div> -->
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading" data-text="Navigation">Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./pages/about.html">About Us</a></li>
+                <li><a href="../index.html#our-services-dude">Services</a></li>
+                <li><a href="#estimate-request-form-buffer">Get an Estimate</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading" data-text="Contact">Contact</h4>
+            <ul class="footer-contact">
+                <li>Phone: <a href="tel:+12087106228">(208) 710-6228</a></li>
+                <li>Email: <a href="robinsonlawncarec@gmail.com">RobinsonLawnCareC@gmail.com</a></li>
+                <li>Service Areas: Rexburg, Rigby & Idaho Falls, ID</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="divider"></div>
+        <p>&copy; <span id="current-year"></span> Robinson Lawn Care. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Phone Number Masking
+    const phoneInput = document.getElementById('phone-number');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let input = e.target.value.replace(/\D/g, '');
+            let size = input.length;
+            if (size > 0) { input = "(" + input; }
+            if (size > 3) { input = input.slice(0, 4) + ") " + input.slice(4); }
+            if (size > 6) { input = input.slice(0, 9) + "-" + input.slice(9, 13); }
+            e.target.value = input;
+        });
+    }
+
+    // 2. Copyright Year
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    // 3. Mobile Menu Logic
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.page-links');
+    const bars = document.querySelectorAll('.bar');
+    const backdrop = document.querySelector('.menu-backdrop');
+    const servicesList = document.querySelector('.services');
+    const serviceBtn = document.querySelector('.service-btn'); // Defined it here!
+
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        if (backdrop) backdrop.classList.remove('active');
+        bars.forEach(bar => {
+            bar.classList.remove('rotate-down', 'fade-out', 'rotate-up');
+        });
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (backdrop) backdrop.classList.toggle('active');
+            bars[0].classList.toggle('rotate-down');
+            bars[1].classList.toggle('fade-out');
+            bars[2].classList.toggle('rotate-up');
+        });
+    }
+
+    if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+    // 4. FAQ Logic (The new part)
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close others
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) otherItem.classList.remove('active');
+            });
+            // Toggle current
+            item.classList.toggle('active');
+        });
+    });
+
+    // 5. Handle Services Dropdown on Mobile
+    if (serviceBtn) {
+        serviceBtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                servicesList.classList.toggle('show');
+                serviceBtn.classList.toggle('arrow-rotate');
+            }
+        });
+    }
+});
+</script>
+
+
+<!-- <script>
+const phoneInput = document.getElementById('phone-number');
+
+phoneInput.addEventListener('input', (e) => {
+    let input = e.target.value.replace(/\D/g, ''); // Remove all non-digits
+    let size = input.length;
+
+    if (size > 0) { input = "(" + input; }
+    if (size > 3) { input = input.slice(0, 4) + ") " + input.slice(4); }
+    if (size > 6) { input = input.slice(0, 9) + "-" + input.slice(9, 13); }
+    
+    e.target.value = input;
+});
+
+// Automatically update the copyright year
+const yearSpan = document.getElementById('current-year');
+yearSpan.textContent = new Date().getFullYear();
+
+
+// The Menu
+// const menuToggle = document.querySelector('.menu-toggle');
+// const navLinks = document.querySelector('.page-links');
+// const bars = document.querySelectorAll('.bar');
+
+// menuToggle.addEventListener('click', () => {
+//     navLinks.classList.toggle('active');
+    
+//     // Animate the hamburger into an "X"
+//     const bars = document.querySelectorAll('.bar');
+//     bars[0].classList.toggle('rotate-down');
+//     bars[1].classList.toggle('fade-out');
+//     bars[2].classList.toggle('rotate-up');
+// });
+
+// // Close the menu when any link inside it is clicked
+// const navItems = document.querySelectorAll('.nav-link');
+
+// navItems.forEach(link => {
+//     link.addEventListener('click', () => {
+//         if (navLinks.classList.contains('active')) {
+//             navLinks.classList.remove('active');
+            
+//             // Reset the hamburger bars to white/original state
+//             bars[0].classList.remove('rotate-down');
+//             bars[1].classList.remove('fade-out');
+//             bars[2].classList.remove('rotate-up');
+//         }
+//     });
+// });
+
+
+// The New Menu
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.page-links');
+const bars = document.querySelectorAll('.bar');
+const backdrop = document.querySelector('.menu-backdrop'); // Select the backdrop
+
+// Function to close the menu
+function closeMenu() {
+    navLinks.classList.remove('active');
+    backdrop.classList.remove('active'); // Hide backdrop
+    
+    // Reset hamburger icon
+    bars[0].classList.remove('rotate-down');
+    bars[1].classList.remove('fade-out');
+    bars[2].classList.remove('rotate-up');
+}
+
+// Function to toggle the menu open/closed
+function toggleMenu() {
+    navLinks.classList.toggle('active');
+    backdrop.classList.toggle('active'); // Toggle backdrop
+    
+    // Toggle hamburger icon
+    bars[0].classList.toggle('rotate-down');
+    bars[1].classList.toggle('fade-out');
+    bars[2].classList.toggle('rotate-up');
+}
+
+// Event Listeners
+menuToggle.addEventListener('click', toggleMenu);
+backdrop.addEventListener('click', closeMenu); // Close when clicking outside
+
+// Close menu when a link is clicked (optional but recommended)
+// const navItems = document.querySelectorAll('.nav-link');
+// navItems.forEach(link => {
+//     link.addEventListener('click', closeMenu);
+// });
+// const serviceBtn = document.querySelector('.service-btn');
+// const servicesList = document.querySelector('.services');
+
+
+// Close menu when a link is clicked, BUT ignore the Services toggle on mobile
+// const navItems = document.querySelectorAll('.nav-link');
+
+// navItems.forEach(link => {
+//     link.addEventListener('click', (e) => {
+//         // Check if the clicked link is the Services button AND we are on mobile
+//         const isServicesToggle = link.classList.contains('service-btn');
+//         const isMobile = window.innerWidth <= 900;
+
+//         if (isServicesToggle && isMobile) {
+//             // Do nothing here! Let the other "serviceBtn" listener handle it
+//             return; 
+//         }
+
+//         // For all other links (Home, About, or the actual Service pages), close the menu
+//         closeMenu();
+//     });
+// });
+
+const navItems = document.querySelectorAll('.nav-link');
+const servicesList = document.querySelector('.services');
+
+navItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const isServicesButton = link.classList.contains('service-btn');
+        const isMobile = window.innerWidth <= 900;
+
+        if (isMobile && isServicesButton) {
+            e.preventDefault(); // Stop page from jumping
+            servicesList.classList.toggle('show'); // Slide the list down
+            link.classList.toggle('arrow-rotate'); // Optional: rotate arrow
+            return; // Don't close the menu!
+        }
+
+        // For all other links, close the menu
+        closeMenu();
+    });
+});
+
+serviceBtn.addEventListener('click', (e) => {
+    // Only run this logic if we are on mobile (less than 900px)
+    if (window.innerWidth <= 900) {
+        e.preventDefault(); // Stop the "#" link from jumping the page
+        servicesList.classList.toggle('show');
+        
+        // Optional: Rotate the arrow if you want to get fancy
+        serviceBtn.classList.toggle('arrow-rotate');
+    }
+});
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        // Optional: Close other open FAQ items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+            }
+        });
+
+        // Toggle the clicked item
+        item.classList.toggle('active');
+    });
+});
+</script> -->
+
+
+</body>
+</html>

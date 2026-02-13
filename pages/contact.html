@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+   <section class="top-bar">
+    <button class="menu-toggle" aria-label="Open Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    
+    <nav id="navigation">
+    <ul class="page-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../pages/about.html" class="nav-link">About</a></li>
+        <li class="services-dropdown">
+            <a href="#" class="service-btn nav-link">Services &#9662;</a>
+            <ul class="services">
+                <li><a href="../pages/mowing.html" class="nav-link">Mowing</a></li>
+                <li><a href="../pages/fertilizing_weed_control.html" class="nav-link">Fertilizing & Weed Control</a></li>
+                <li><a href="../pages/spring_jumpstart.html" class="nav-link">Spring Jump Start</a></li>
+                <li><a href="../pages/fall_cleanup.html" class="nav-link">Fall Clean-up</a></li>
+            </ul>
+        </li>
+        <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+        <li class="mobile-estimate-li">
+            <a href="#estimate-request-form-buffer" class="nav-link estimate-link-mobile">Get a Free Estimate</a>
+        </li>
+    </ul>
+   </nav> 
+   
+   <a href="../index.html">
+    <div class="logo">
+        <span class="logo-top" data-text="Robinson">Robinson</span>
+        <div class="logo-bottom-row">
+            <span class="logo-bottom" data-text="Lawn Care">Lawn Care</span>
+        </div>
+    </div>
+   </a>
+
+   <div class="top-actions"> 
+    <a href="tel:+12087106228" class="phone-link">
+        <span class="phone-text">(208) 710-6228</span>
+        <svg class="phone-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+    </a>
+    <a href="#estimate-request-form-buffer" class="estimate-btn">Your Free Estimate</a>
+   </div>
+</section>
+<div class="menu-backdrop"></div>
+
+
+
+
+<header class="hero-cards-header">
+    <div class="hero-card-container">
+        <div class="hero-card image-card contact-info-sidebar">
+    <div class="contact-text-area">
+        <h2 class="contact-sidebar-title">Get In <span class="paladins-green">Touch.</span></h2>
+        
+        <div class="contact-photo-inline">
+            <img src="../assets/images/crew/Screenshot 2026-02-12 at 3.27.08 PM.png" alt="Robinson Lawn Care in Action">
+        </div>
+
+        <p>
+            We’re more than just a crew with mowers—we’re your neighbors here in Southeast Idaho. 
+            Whether you have a question about a weird brown patch in your yard, you want some friendly 
+            watering tips to get rid of a dry spot
+            in preparation for an upcoming event, or you're ready to 
+            schedule a full-season transformation: we’re here to help. 
+        </p>
+        
+        <div class="contact-methods">
+            <div class="method-item">
+                <div class="method-icon">📞</div>
+                <div class="method-data">
+                    <strong>Call or Text</strong>
+                    <a href="tel:2087106228">(208) 710-6228</a>
+                </div>
+            </div>
+
+            <div class="method-item">
+                <div class="method-icon">✉️</div>
+                <div class="method-data">
+                    <strong>Email Us</strong>
+                    <a href="mailto:email@robinsonlawncare.com">email@robinsonlawncare.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="hero-card info-card">
+            <div class="hero-card-title">
+                <div class="paladins-white">Your Lawn.</div>
+                <div class="paladins-green">Perfected.</div>
+                <div id="estimate-request-form-buffer"></div>
+            </div>
+            
+            <h1>Contact the team at Robinson Lawn Care with any and all questions you may have. Our #1 priority is you!</h1>
+                <!-- <div class="divider" id="form-line"></div> -->
+            <form class="estimate-form" id="estimate-request-form">
+               <h2 class="form-title">Complete This Form For a Personalized Estimate</h2>
+                 <div class="divider" id="form-line"></div>
+                
+                    <label for="name" class="estimate-label">Name</label>
+                    <input type="text" name="name" placeholder="John Johnson" required id="name">
+                    <label for="address" class="estimate-label">Address</label>
+                    <input type="text" name="address" placeholder="E 1st Main St." id="address" required>
+                    <label for="phone-number" class="estimate-label">Phone Number</label>
+                    <input type="tel" placeholder="(208) 710-6228" id="phone-number" maxlength="14" required>
+                    <label for="email" class="estimate-label">Email</label>
+                    <input type="email" placeholder="email@robinsonlawncare.com" id="email" required>
+                    <label for="service-details" class="estimate-label">Please tell us how we can help!</label>
+                    <textarea name="details" id="service-details"></textarea>
+                
+                    <button type="submit" class="submit-btn">Get a Free Estimate</button>
+            </form>
+        </div>
+        
+
+    </div>
+</header>
+
+    
+
+</body>
+</html>
