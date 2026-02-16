@@ -86,13 +86,13 @@ navItems.forEach(link => {
         serviceBtn.addEventListener('click', (e) => {
             if (window.innerWidth <= 900) {
                 e.preventDefault();
+                e.stopPropagation(); // Prevents the click from bubbling up
                 servicesList.classList.toggle('show');
                 serviceBtn.classList.toggle('arrow-rotate');
             }
         });
     }
 });
-
 
 
 
