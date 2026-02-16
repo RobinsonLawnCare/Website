@@ -100,7 +100,7 @@ textarea {
     transition: color .3s ease;
     white-space: nowrap;
 }
-.nav-link:hover, .services_dropdown:hover > .nav_link {
+.services_dropdown:hover > .nav_link {
     color: #32a852;
 }
 .services-dropdown {
@@ -134,12 +134,16 @@ textarea {
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-
+@media(hover:hover) {
 .services-dropdown:hover .services {
     /* display: block;  */
     opacity: 1;
     visibility: visible;
     transform: translateY(0)
+}
+.nav-link:hover {
+    color: #32a852;
+}
 }
 a {
     color: white;
