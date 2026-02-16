@@ -1,5 +1,5 @@
 
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // 1. Phone Number Masking
     const phoneInput = document.getElementById('phone-number');
     if (phoneInput) {
@@ -23,7 +23,7 @@
     const bars = document.querySelectorAll('.bar');
     const backdrop = document.querySelector('.menu-backdrop');
     const servicesList = document.querySelector('.services');
-    const serviceBtn = document.querySelector('.service-btn'); // Defined it here!
+    const serviceBtn = document.querySelector('.service-btn');
 
     function closeMenu() {
         navLinks.classList.remove('active');
@@ -33,27 +33,15 @@
         });
     }
 
-    // NEW CODE
-
-    // Close menu when a nav link is clicked (excluding the services dropdown toggle)
-const navItems = document.querySelectorAll('.nav-link');
-
-navItems.forEach(link => {
-    link.addEventListener('click', (e) => {
-        // We want the menu to close for everything EXCEPT the 'Services' toggle on mobile
-        const isServicesButton = link.classList.contains('service-btn');
-        const isMobile = window.innerWidth <= 900;
-
-        if (isMobile && isServicesButton) {
-            // Do nothing, let the dropdown logic handle it
-            return;
-        }
-
-        // For "Home", "Contact", and "Get a Free Estimate", close the menu
-        closeMenu();
+    const navItems = document.querySelectorAll('.nav-link');
+    navItems.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const isServicesButton = link.classList.contains('service-btn');
+            const isMobile = window.innerWidth <= 900;
+            if (isMobile && isServicesButton) return;
+            closeMenu();
+        });
     });
-});
-    // END NEW CODE
 
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
@@ -67,16 +55,14 @@ navItems.forEach(link => {
 
     if (backdrop) backdrop.addEventListener('click', closeMenu);
 
-    // 4. FAQ Logic (The new part)
+    // 4. FAQ Logic
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
-            // Close others
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) otherItem.classList.remove('active');
             });
-            // Toggle current
             item.classList.toggle('active');
         });
     });
@@ -86,13 +72,154 @@ navItems.forEach(link => {
         serviceBtn.addEventListener('click', (e) => {
             if (window.innerWidth <= 900) {
                 e.preventDefault();
-                e.stopPropagation(); // Prevents the click from bubbling up
+                e.stopPropagation();
                 servicesList.classList.toggle('show');
                 serviceBtn.classList.toggle('arrow-rotate');
             }
         });
     }
-});
+
+    // --- STEP 6: Form Submission Logic ---
+    const estimateForm = document.getElementById('estimate-request-form');
+
+    if (estimateForm) {
+        estimateForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = estimateForm.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            
+            // UI Feedback
+            submitBtn.textContent = "Sending...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(estimateForm);
+            
+            try {
+                // REPLACE "YOUR_FORM_ID" with your actual Formspree ID
+                const response = await fetch("https://formspree.io/f/xlgwnngl", {
+                    method: "POST",
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Success: Replace the form with a nice confirmation message
+                    estimateForm.innerHTML = `
+                        <div style="text-align: center; padding: 40px 20px; border: 2px solid #32a852; border-radius: 20px; background: #000;">
+                            <h2 style="color: #32a852; font-family: 'paladins-outline'; font-size: 28px; margin-bottom: 15px;">Request Received!</h2>
+                            <p style="color: #fff; font-size: 18px; line-height: 1.5;">Thanks for reaching out! We'll look over your details and get back to you with an estimate shortly.</p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                alert("Something went wrong. Please try calling us at (208) 710-6228.");
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+}); // This marks the end of the DOMContentLoaded listener
+
+
+
+
+//     document.addEventListener('DOMContentLoaded', () => {
+//     // 1. Phone Number Masking
+//     const phoneInput = document.getElementById('phone-number');
+//     if (phoneInput) {
+//         phoneInput.addEventListener('input', (e) => {
+//             let input = e.target.value.replace(/\D/g, '');
+//             let size = input.length;
+//             if (size > 0) { input = "(" + input; }
+//             if (size > 3) { input = input.slice(0, 4) + ") " + input.slice(4); }
+//             if (size > 6) { input = input.slice(0, 9) + "-" + input.slice(9, 13); }
+//             e.target.value = input;
+//         });
+//     }
+
+//     // 2. Copyright Year
+//     const yearSpan = document.getElementById('current-year');
+//     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+//     // 3. Mobile Menu Logic
+//     const menuToggle = document.querySelector('.menu-toggle');
+//     const navLinks = document.querySelector('.page-links');
+//     const bars = document.querySelectorAll('.bar');
+//     const backdrop = document.querySelector('.menu-backdrop');
+//     const servicesList = document.querySelector('.services');
+//     const serviceBtn = document.querySelector('.service-btn'); // Defined it here!
+
+//     function closeMenu() {
+//         navLinks.classList.remove('active');
+//         if (backdrop) backdrop.classList.remove('active');
+//         bars.forEach(bar => {
+//             bar.classList.remove('rotate-down', 'fade-out', 'rotate-up');
+//         });
+//     }
+
+//     // NEW CODE
+
+//     // Close menu when a nav link is clicked (excluding the services dropdown toggle)
+// const navItems = document.querySelectorAll('.nav-link');
+
+// navItems.forEach(link => {
+//     link.addEventListener('click', (e) => {
+//         // We want the menu to close for everything EXCEPT the 'Services' toggle on mobile
+//         const isServicesButton = link.classList.contains('service-btn');
+//         const isMobile = window.innerWidth <= 900;
+
+//         if (isMobile && isServicesButton) {
+//             // Do nothing, let the dropdown logic handle it
+//             return;
+//         }
+
+//         // For "Home", "Contact", and "Get a Free Estimate", close the menu
+//         closeMenu();
+//     });
+// });
+//     // END NEW CODE
+
+//     if (menuToggle) {
+//         menuToggle.addEventListener('click', () => {
+//             navLinks.classList.toggle('active');
+//             if (backdrop) backdrop.classList.toggle('active');
+//             bars[0].classList.toggle('rotate-down');
+//             bars[1].classList.toggle('fade-out');
+//             bars[2].classList.toggle('rotate-up');
+//         });
+//     }
+
+//     if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+//     // 4. FAQ Logic (The new part)
+//     const faqItems = document.querySelectorAll('.faq-item');
+//     faqItems.forEach(item => {
+//         const question = item.querySelector('.faq-question');
+//         question.addEventListener('click', () => {
+//             // Close others
+//             faqItems.forEach(otherItem => {
+//                 if (otherItem !== item) otherItem.classList.remove('active');
+//             });
+//             // Toggle current
+//             item.classList.toggle('active');
+//         });
+//     });
+
+//     // 5. Handle Services Dropdown on Mobile
+//     if (serviceBtn) {
+//         serviceBtn.addEventListener('click', (e) => {
+//             if (window.innerWidth <= 900) {
+//                 e.preventDefault();
+//                 e.stopPropagation(); // Prevents the click from bubbling up
+//                 servicesList.classList.toggle('show');
+//                 serviceBtn.classList.toggle('arrow-rotate');
+//             }
+//         });
+//     }
+// });
 
 
 
