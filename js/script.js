@@ -33,6 +33,28 @@
         });
     }
 
+    // NEW CODE
+
+    // Close menu when a nav link is clicked (excluding the services dropdown toggle)
+const navItems = document.querySelectorAll('.nav-link');
+
+navItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // We want the menu to close for everything EXCEPT the 'Services' toggle on mobile
+        const isServicesButton = link.classList.contains('service-btn');
+        const isMobile = window.innerWidth <= 900;
+
+        if (isMobile && isServicesButton) {
+            // Do nothing, let the dropdown logic handle it
+            return;
+        }
+
+        // For "Home", "Contact", and "Get a Free Estimate", close the menu
+        closeMenu();
+    });
+});
+    // END NEW CODE
+
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
