@@ -984,7 +984,7 @@ a {
         height: clamp(26px, 2.5vw, 34px);
     }
     .why-choose-us {
-        font-size: clamp(19px, 5vw, 34px);
+        font-size: clamp(20px, 7vw, 34px);
         
     }
     .faq-title {
