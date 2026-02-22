@@ -1354,7 +1354,7 @@ a {
 /* New Inline Photo Styling */
 .contact-photo-inline {
     width: 100%;
-    height: 300px; /* Adjust this height as needed */
+    height: 450px; /* Adjust this height as needed */
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 50px; /* Space below the photo */
@@ -1411,4 +1411,197 @@ a {
 
 .method-data a:hover {
     color: #32a852;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact Page */
+
+/* Make the two hero cards align better */
+.contact-sidebar {
+    background: #111 !important; /* Slightly darker than the form card for contrast */
+    border-right: 2px solid #32a852; /* Subtle green accent divider */
+}
+
+.contact-description {
+    font-size: 16px !important;
+    color: #ccc !important;
+    margin-bottom: 30px;
+}
+
+/* The Interactive Contact Boxes */
+.contact-methods-grid {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.method-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.method-box:hover {
+    border-color: #32a852;
+    background: #222;
+    transform: translateX(5px);
+}
+
+.method-icon {
+    font-size: 24px;
+    background: rgba(50, 168, 82, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.method-info strong {
+    display: block;
+    color: #32a852;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.method-info span {
+    color: white;
+    font-size: 16px;
+}
+
+/* The "What Happens Next" Timeline */
+.next-steps {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.next-steps-title {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.steps-list {
+    list-style: none;
+    padding: 0;
+}
+
+.steps-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.steps-list li span {
+    background: #32a852;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 930px) {
+    .contact-sidebar {
+        border-right: none;
+        border-bottom: 4px solid #32a852;
+    }
+    
+    .contact-photo-inline {
+        height: 200px;
+        margin-bottom: 25px;
+    }
+}
+/* Updated SVG Icon Containers */
+.method-icon-svg {
+    width: 45px;
+    height: 45px;
+    background: rgba(50, 168, 82, 0.1);
+    color: #32a852; /* Brand Green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(50, 168, 82, 0.3);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.method-icon-svg svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Hover effects for the whole box */
+.method-box:hover .method-icon-svg {
+    background: #32a852;
+    color: #000; /* Icon turns black when background turns green */
+    transform: scale(1.05);
+}
+
+.method-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #1a1a1a;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.method-box:hover {
+    border-color: #32a852;
+    background: #222;
+    transform: translateX(8px);
+}
+
+/* Typography Tweaks */
+.method-info strong {
+    display: block;
+    color: #32a852;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2px;
+}
+
+.method-info span {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
 }
