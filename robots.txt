@@ -1,0 +1,6 @@
+
+User-agent: *
+Allow: /
+Disallow: /pages/door-hanger
+
+Sitemap: https://robinsonlawncare.com/sitemap.xml
